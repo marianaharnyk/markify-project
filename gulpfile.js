@@ -19,7 +19,7 @@ function styles () {
 }
 
 function deploy(){
-    return src('app/dist/**/*')
+    return src('dist/**/*')
         .pipe(ghPages());
 }
 

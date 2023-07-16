@@ -1,5 +1,6 @@
 # compiled output
 /dist
+/.publish
 # dependencies
 /node_modules
 
