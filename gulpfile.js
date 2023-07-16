@@ -5,6 +5,7 @@ const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
 const clean = require('gulp-clean');
+const ghPages = require('gulp-gh-pages');
 
 function styles () {
     return src('app/scss/style.scss')
@@ -15,6 +16,11 @@ function styles () {
         .pipe(scss({outputStyle: 'compressed'}))
         .pipe(dest('app/css'))
         .pipe(browserSync.stream());
+}
+
+function deploy(){
+    return src('app/dist/**/*')
+        .pipe(ghPages());
 }
 
 function watching(){
@@ -42,6 +48,7 @@ function cleanDist (){
 
 exports.styles = styles;
 exports.watching = watching;
+exports.deploy = deploy;
 
 exports.build = series(cleanDist, building);
 exports.default = parallel(styles, watching);
