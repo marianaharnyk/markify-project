@@ -1,0 +1,125 @@
+.footer {
+  background: $footer-background;
+
+  &__body {
+    max-width: $max-container-width;
+    margin: auto;
+    padding: 64px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logo {
+    z-index: 1;
+  }
+
+  &__menu {
+    margin-top: 24px;
+  }
+
+  &__socials {
+    margin: 28px 0;
+  }
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  &__item {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition-duration: .3s;
+
+    &-facebook {
+      background: url("../images/facebook.svg") no-repeat center;
+      background-size: contain;
+
+      &:hover {
+        background: url("../images/facebook_hover.svg") no-repeat center;
+        background-size: contain;
+      }
+    }
+
+    &-linked-in {
+      background: url("../images/linkedin.svg") no-repeat center;
+      background-size: contain;
+
+      &:hover {
+        background: url("../images/linkedin_hover.svg") no-repeat center;
+        background-size: contain;
+      }
+    }
+
+    &-instagram {
+      background: url("../images/instagram.svg") no-repeat center;
+      background-size: contain;
+
+      &:hover {
+        background: url("../images/instagram_hover.svg") no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  &__text {
+    font-family: $main-font;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: $main-title-color;
+    text-transform: capitalize;
+  }
+
+  &__mail {
+    font-family: $secondary-font;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $dark-text-color;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+@media all and (max-width: 768px) {
+  .footer {
+
+    &__body {
+      padding: 64px 16px;
+    }
+  }
+
+  .contact {
+    gap: 8px;
+
+    &__text {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    &__title {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+}

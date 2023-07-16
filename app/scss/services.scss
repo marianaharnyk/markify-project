@@ -1,0 +1,152 @@
+.services {
+
+  &__body {
+    max-width: $max-container-width;
+    margin: auto;
+    padding: 75px 12px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__image {
+    background: url("../images/leads-image.svg") no-repeat center;
+    background-size: contain;
+  }
+
+  &__info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 16px 24px;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+
+  &-violet {
+    background: $violet-accent-color;
+  }
+
+  &-yellow {
+    background: $yellow-accent-color;
+  }
+
+  &__title {
+    font-family: $main-font;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 700;
+    text-align: center;
+    color: $light-text-color;
+    text-transform: capitalize;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+
+    &-row {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    font-family: $secondary-font;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 700;
+    color: $light-text-color;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .services {
+
+    &__body {
+      padding: 40px 16px;
+    }
+
+    &__content {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    &__info {
+      align-items: center;
+      width: 100%;
+    }
+
+    &__image {
+      background: url("../images/leads-image-min.svg") no-repeat center;
+      background-size: contain;
+    }
+
+    &__wrapper {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__column {
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+
+  .service {
+
+    &__list {
+      gap: 16px;
+
+      &-row {
+        flex-direction: column;
+      }
+    }
+
+    &__title {
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    &__item {
+      font-size: 14px;
+      line-height: 19px;
+      font-weight: 700;
+      color: $light-text-color;
+    }
+  }
+}

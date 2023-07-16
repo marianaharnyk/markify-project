@@ -1,0 +1,137 @@
+.partners {
+
+  &__body {
+    max-width: $max-container-width;
+    margin: auto;
+    padding: 75px 12px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__image {
+    background: url("../images/business-image.svg") no-repeat center;
+    background-size: contain;
+  }
+
+  &__info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+
+.partner {
+  width: 267px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $background-partner-item;
+  border-radius: 10px;
+
+  &__logo {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+
+@media all and (max-width: 1200px) {
+  .partner {
+    width: 240px;
+    height: 110px;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .partner {
+    width: 175px;
+    height: 80px;
+  }
+
+  .container {
+    gap: 15px;
+
+    &__item {
+      gap: 15px;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .partners {
+    &__body {
+      padding: 40px 16px;
+    }
+
+    &__content {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    &__info {
+      width: 100%;
+      gap: 40px;
+    }
+
+    &__title {
+
+      &:after {
+        width: 83%;
+        right: -2px;
+        left: unset;
+      }
+    }
+
+    &__image {
+      background: url("../images/business-image-min.svg") no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  .container {
+    gap: 20px;
+    width: 100%;
+
+    &__item {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  .partner {
+    width: 100%;
+    height: 104px;
+  }
+}

@@ -1,0 +1,383 @@
+.header {
+  background: url("../images/bg_desktop.png") no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+
+  &__body {
+    max-width: $max-container-width;
+    margin: auto;
+    padding: 0 12px;
+  }
+
+  &__navbar {
+    padding: 24px 0;
+  }
+
+  &__main {
+    padding: 40px 0;
+  }
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+  }
+
+  &__close {
+    display: none;
+  }
+}
+
+.burger {
+  display: none;
+}
+
+.button {
+  padding: 12px 24px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $secondary-font;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  background: $violet-accent-color;
+  border-radius: 5px;
+  color: $light-text-color;
+  cursor: pointer;
+  text-decoration: none;
+  transition-duration: .3s;
+}
+
+.button:hover {
+  background: $yellow-accent-color;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  &__image {
+    background: url("../images/marketing-image.svg") no-repeat center;
+    background-size: contain;
+  }
+
+  &__info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  &__title {
+    font-family: $main-font;
+    font-size: 44px;
+    line-height: 61px;
+    font-weight: 700;
+    color: $main-title-color;
+    text-transform: capitalize;
+    position: relative;
+    z-index: 2;
+
+    &-underline {
+      position: relative;
+      display: inline-block;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 7px;
+        left: -4px;
+        width: 103%;
+        height: 12px;
+        border-radius: 9px;
+        background-color: #e9a923;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__text {
+    font-family: $secondary-font;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $dark-text-color;
+  }
+}
+
+.scroll {
+  height: 188px;
+  position: relative;
+
+  &__wrapper {
+    display: flex;
+    position: absolute;
+    width: 101%;
+    height: 61px;
+    margin: auto;
+    overflow: hidden;
+    z-index: 1;
+    left: -5px;
+    top: 63px;
+
+    &-violet {
+      transform: rotate(4.5deg);
+      background-color: #7f3a6a;
+    }
+
+    &-yellow {
+      transform: rotate(-4.5deg);
+      background-color: $yellow-accent-color;
+    }
+  }
+
+  &__item {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+  }
+
+  &__line {
+    display: flex;
+    animation: scrollText 20s infinite linear;
+  }
+
+  &__text {
+    font-family: $secondary-font;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 400;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: inline-block;
+    margin: 0 19px;
+    color: $light-text-color;
+
+    &-outline {
+      -webkit-text-stroke: 1px $light-text-color;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media all and (max-width: 992px) {
+  .navbar {
+
+    &__content {
+      gap: 32px;
+    }
+  }
+
+  .main {
+
+    &__title {
+      font-size: 36px;
+      line-height: 51px;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .header {
+    background: url("../images/bg_mob.png") no-repeat center;
+    background-size: cover;
+
+    &__body {
+      padding: 0 16px;
+    }
+
+    &__main {
+      padding: 12px 0 24px;
+    }
+  }
+  .navbar {
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      background-color: $light-text-color;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: -100%;
+      z-index: 4;
+      overflow: hidden;
+      margin: auto;
+      padding: 0 12px;
+    }
+
+    &__close {
+      display: block;
+      height: 16px;
+      width: 24px;
+      position: absolute;
+      z-index: 4;
+      right: 16px;
+      top: 33px;
+    }
+
+    &__close:before,
+    &__close:after {
+      content: " ";
+      background-color: $violet-accent-color;
+      height: 2px;
+      left: 0;
+      position: absolute;
+      border-radius: 3px;
+      width: 100%;
+    }
+
+    &__close:before {
+      transform: rotate(-45deg);
+      top: 50%;
+    }
+
+    &__close:after {
+      bottom: 38%;
+      transform: rotate(45deg);
+    }
+  }
+
+  .burger {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 24px;
+    position: relative;
+  }
+
+  .burger:before,
+  .burger:after,
+  .burger__dash {
+    background-color: $violet-accent-color;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    border-radius: 3px;
+    width: 100%;
+  }
+
+  .burger:before {
+    content: " ";
+    top: 0;
+  }
+
+  .burger:after {
+    content: " ";
+    bottom: 0;
+  }
+
+  .navbar__content:target {
+    top: 0;
+  }
+
+  .button {
+    padding: 12px 54px;
+  }
+
+  .main {
+    flex-direction: column;
+    gap: 40px;
+
+    &__image {
+      background: url("../images/marketing-image-min.svg") no-repeat;
+      background-size: contain;
+    }
+
+    &__info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &__title {
+      font-size: 28px;
+      line-height: 40px;
+
+      &-underline {
+
+        &:after {
+          bottom: 4px;
+          left: -4px;
+          width: 103%;
+          height: 9px;
+          border-radius: 9px;
+        }
+      }
+    }
+  }
+
+  .scroll {
+    height: 135px;
+
+    &__wrapper {
+      height: 43px;
+      top: 49px;
+      width: 103%;
+      left: -7px;
+
+      &-violet {
+        transform: rotate(6.5deg);
+      }
+
+      &-yellow {
+        transform: rotate(-6.5deg);
+      }
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 19px;
+      margin: 0 15px;
+    }
+  }
+}
+
+@media all and (max-width: 540px) {
+  .scroll {
+
+    &__wrapper {
+      &-violet {
+        transform: rotate(8.5deg);
+      }
+
+      &-yellow {
+        transform: rotate(-8.5deg);
+      }
+    }
+  }
+}
