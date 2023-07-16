@@ -36,6 +36,7 @@ function watching(){
 function building (){
     return src([
         'app/css/style.min.css',
+        'app/images/**/*',
         'app/**/*.html'
     ], {base: 'app'})
         .pipe(dest('dist'))
